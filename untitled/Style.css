@@ -1,0 +1,180 @@
+@keyframes blinking {
+    0% {color: #fff;}
+    50% {color: #7b68ee;}
+    100% {color: #fff;}
+}
+
+@keyframes backgroundScroll {
+    0% {background-position: 0% 0%;}
+    100% {background-position: 100% 0%;}
+}
+
+@keyframes typing {
+    from { width: 0; }
+}
+
+body {
+    background: linear-gradient(135deg, #4b6cb7, #182848);
+    background-size: 200% 200%;
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    animation: backgroundScroll 15s infinite alternate;
+}
+
+.container {
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    max-width: 1000px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.container:hover {
+    transform: scale(1.05);
+}
+
+.avatar-container img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    box-shadow: 0px 0px 25px 12px rgba(0, 0, 0, 0.6);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    animation: resizeAvatar 1.5s ease-out;
+}
+
+.avatar-container img:hover {
+    transform: scale(1.2);
+    box-shadow: 0px 0px 40px 20px rgba(0, 0, 0, 0.8);
+}
+
+.networks-projects button, .donation-contact button {
+    border: none;
+    border-radius: 50px;
+    background: #7b68ee;
+    color: #fff;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    background-image: url("pixel-art-texture.png");
+    background-size: cover;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.networks-projects button:hover, .donation-contact button:hover {
+    animation: jiggle 0.8s infinite;
+    background-color: #ff105e;
+    background-position: right center;
+    box-shadow: 0px 0px 25px #ff105e, 0px 0px 35px #ff105e;
+}
+
+.social-links a {
+    color: #fff;
+    margin: 15px;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #ff105e;
+    text-shadow: 0 0 15px #ff105e, 0 0 25px #ff105e, 0 0 35px #ff105e;
+}
+
+.donation-contact button {
+    box-shadow: 0px 0px 25px #ff105e;
+}
+
+.donation-contact button:hover {
+    box-shadow: 0px 0px 35px #ff105e;
+}
+
+.footer {
+    margin-top: 30px;
+    font-size: 0.8em;
+    color: #ccc;
+}
+
+#stars, #stars2, #stars3 {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    z-index: -1;
+}
+
+#stars {
+    background: url('https://www.script-tutorials.com/demos/360/images/stars.png') repeat top center;
+    z-index: -1;
+    animation: animateStars 100s linear infinite;
+}
+
+#stars2 {
+    background: url('https://www.script-tutorials.com/demos/360/images/stars.png') repeat top center;
+    z-index: -2;
+    animation: animateStars 50s linear infinite;
+}
+
+#stars3 {
+    background: url('https://www.script-tutorials.com/demos/360/images/stars.png') repeat top center;
+    z-index: -3;
+    animation: animateStars 25s linear infinite;
+}
+
+@keyframes animateStars {
+    from { background-position: 0px; }
+    to { background-position: -9999px; }
+}
+
+@keyframes jiggle {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.loader {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.introduction h1 {
+    animation: text-flicker 5s infinite;
+    font-size: 2.5em;
+    margin: 10px 0;
+}
+
+@keyframes text-flicker {
+    0% { color: #fff; }
+    50% { color: #6a5acd; text-shadow: 0 0 15px #6a5acd, 0 0 25px #6a5acd, 0 0 35px #6a5acd, 0 0 45px #6a5acd; }
+    100% { color: #fff; }
+}
+
+@keyframes resizeAvatar {
+    0% {transform: scale(1.25);}
+    100% {transform: scale(1);}
+}
