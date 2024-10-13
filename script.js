@@ -1,41 +1,33 @@
-let discordLink = document.getElementById('discord-link');
+// script.js
 
-discordLink.onclick = function(event) {
-    event.preventDefault();
+// Dark Mode Toggle
+function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+}
 
-    navigator.clipboard.writeText('.ovni.');
+// Scroll zu den Abschnitten
+document.querySelectorAll('nav a').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
 
-    let copyMsg = document.createElement('span');
-    copyMsg.textContent = "¡Copiado!";
-    copyMsg.style.position = "absolute";
-    copyMsg.style.color = "#fff";
-    copyMsg.style.background = "rgba(0,0,0,0.8)";
-    copyMsg.style.borderRadius = "5px";
-    copyMsg.style.padding = "5px 10px";
-    copyMsg.style.zIndex = "100";
-    copyMsg.style.top = "50%";
-    copyMsg.style.left = "50%";
-    copyMsg.style.transform = "translate(-50%, -50%)";
-    copyMsg.style.transition = "opacity 0.5s ease, transform 0.5s ease";
-    copyMsg.style.opacity = "0";
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
 
-    discordLink.append(copyMsg);
+// Formularvalidierung
+document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
 
-    // Trigger reflow to enable transition
-    setTimeout(() => {
-        copyMsg.style.opacity = "1";
-        copyMsg.style.transform = "translate(-50%, -60%)";
-    }, 0);
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
 
-    // Hide the message after 2 seconds
-    setTimeout(() => {
-        copyMsg.style.opacity = "0";
-        copyMsg.style.transform = "translate(-50%, -50%)";
-        // Remove the element after the transition
-        setTimeout(() => {
-            if (copyMsg.parentNode) {
-                discordLink.removeChild(copyMsg);
-            }
-        }, 500);
-    }, 2000);
-};
+    if (name && email && message) {
+        alert('Ihre Nachricht wurde gesendet!');
+        this.reset();
+    } else {
+        alert('Bitte füllen Sie alle Felder aus.');
+    }
+});
