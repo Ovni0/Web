@@ -1,180 +1,293 @@
-@keyframes blinking {
-    0% {color: #fff;}
-    50% {color: #7b68ee;}
-    100% {color: #fff;}
-}
+/* style.css */
 
-@keyframes backgroundScroll {
-    0% {background-position: 0% 0%;}
-    100% {background-position: 100% 0%;}
-}
-
-@keyframes typing {
-    from { width: 0; }
-}
-
+/* Allgemeine Stile */
 body {
-    background: linear-gradient(135deg, #4b6cb7, #182848);
-    background-size: 200% 200%;
-    font-family: 'Segoe UI', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    color: #fff;
-    animation: backgroundScroll 15s infinite alternate;
+    background-color: #f5f5f5;
+    color: #333;
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
 
-.container {
-    background: rgba(0, 0, 0, 0.8);
-    border-radius: 20px;
-    padding: 30px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 90%;
-    max-width: 1000px;
+body.dark-mode {
+    background-color: #333;
+    color: #f5f5f5;
+}
+
+/* Header-Stile */
+header {
+    background-color: #9c27b0; /* Lila Farbschema */
+    color: white;
+    padding: 20px;
     text-align: center;
-    transition: transform 0.3s ease;
+    position: relative; /* Relativ positionieren, um das Logo zu platzieren */
 }
 
-.container:hover {
-    transform: scale(1.05);
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    animation: fadeIn 2s ease-in-out;
 }
 
-.avatar-container img {
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    box-shadow: 0px 0px 25px 12px rgba(0, 0, 0, 0.6);
-    transition: transform 0.5s ease, box-shadow 0.5s ease;
-    animation: resizeAvatar 1.5s ease-out;
+/* Platzhalter für Logo */
+header .logo {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    width: 50px; /* Breite des Logos */
+    height: 50px; /* Höhe des Logos */
 }
 
-.avatar-container img:hover {
-    transform: scale(1.2);
-    box-shadow: 0px 0px 40px 20px rgba(0, 0, 0, 0.8);
+header .logo img {
+    max-width: 100%;
+    max-height: 100%;
 }
 
-.networks-projects button, .donation-contact button {
-    border: none;
-    border-radius: 50px;
-    background: #7b68ee;
-    color: #fff;
-    padding: 10px 20px;
-    margin: 5px;
-    cursor: pointer;
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s ease;
-    background-image: url("pixel-art-texture.png");
-    background-size: cover;
-    font-size: 1em;
-    font-weight: bold;
+/* Navigation-Stile */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
 
-.networks-projects button:hover, .donation-contact button:hover {
-    animation: jiggle 0.8s infinite;
-    background-color: #ff105e;
-    background-position: right center;
-    box-shadow: 0px 0px 25px #ff105e, 0px 0px 35px #ff105e;
+nav ul li {
+    margin: 0;
 }
 
-.social-links a {
-    color: #fff;
-    margin: 15px;
+nav ul li a {
+    color: white;
     text-decoration: none;
-    font-size: 1.2em;
-    transition: all 0.3s ease;
+    font-weight: bold;
+    transition: color 0.3s ease;
 }
 
-.social-links a:hover {
-    color: #ff105e;
-    text-shadow: 0 0 15px #ff105e, 0 0 25px #ff105e, 0 0 35px #ff105e;
+nav ul li a:hover {
+    color: #ffeb3b; /* Gelb beim Hover */
 }
 
-.donation-contact button {
-    box-shadow: 0px 0px 25px #ff105e;
+/* Hauptbereich-Stile */
+main {
+    padding: 20px;
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, background-color 0.5s ease, color 0.5s ease;
 }
 
-.donation-contact button:hover {
-    box-shadow: 0px 0px 35px #ff105e;
+body.dark-mode main {
+    background-color: #444;
+    color: #f5f5f5;
 }
 
-.footer {
-    margin-top: 30px;
-    font-size: 0.8em;
+main:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Abschnitt-Stile */
+section {
+    margin-bottom: 20px;
+    animation: slideIn 1s ease-out;
+}
+
+section h2 {
+    position: relative;
+    color: #9c27b0; /* Lila Farbe für Überschriften */
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+body.dark-mode section h2 {
+    color: #ffeb3b;
+    text-shadow: 2px 2px 4px rgba(255, 235, 59, 0.3);
+}
+
+section h2:hover {
+    color: #6a1b9a;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+section p, section blockquote {
+    line-height: 1.6;
+    text-align: justify;
+}
+
+blockquote {
+    margin: 20px 0;
+    padding: 10px;
+    background-color: #f5f5f5;
+    border-left: 5px solid #9c27b0;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+body.dark-mode blockquote {
+    background-color: #555;
+    color: #f5f5f5;
+    border-left-color: #ffeb3b;
+}
+
+/* Team-Sektion-Stile */
+#team {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.team-member {
+    text-align: center;
+    margin: 20px;
+    max-width: 200px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.team-member img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.team-member h3 {
+    color: #9c27b0;
+    margin-top: 10px;
+    transition: color 0.3s ease;
+}
+
+body.dark-mode .team-member h3 {
+    color: #ffeb3b;
+}
+
+.team-member p {
+    color: #666;
+    transition: color 0.3s ease;
+}
+
+body.dark-mode .team-member p {
     color: #ccc;
 }
 
-#stars, #stars2, #stars3 {
+/* Formular-Stile */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-top: 10px;
+}
+
+form input, form textarea, form button {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #9c27b0;
+    border-radius: 5px;
+    transition: background-color 0.5s ease, border 0.5s ease, color 0.5s ease;
+}
+
+body.dark-mode form input,
+body.dark-mode form textarea {
+    background-color: #555;
+    color: #f5f5f5;
+    border-color: #ffeb3b;
+}
+
+form button {
+    background-color: #9c27b0;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode form button {
+    background-color: #ffeb3b;
+    color: #333;
+}
+
+form button:hover {
+    background-color: #6a1b9a;
+}
+
+body.dark-mode form button:hover {
+    background-color: #ffd700;
+}
+
+/* Footer-Stile */
+footer {
+    background-color: #6a1b9a; /* Dunkleres Lila für den Footer */
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+body.dark-mode footer {
+    background-color: #222;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #team {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Button für Dark Mode */
+.dark-mode-toggle {
     position: fixed;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-    z-index: -1;
+    bottom: 20px;
+    right: 20px;
+    background-color: #9c27b0; /* Lila Farbe */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-#stars {
-    background: url('https://www.script-tutorials.com/demos/360/images/stars.png') repeat top center;
-    z-index: -1;
-    animation: animateStars 100s linear infinite;
+.dark-mode-toggle:hover {
+    background-color: #6a1b9a;
 }
 
-#stars2 {
-    background: url('https://www.script-tutorials.com/demos/360/images/stars.png') repeat top center;
-    z-index: -2;
-    animation: animateStars 50s linear infinite;
+/* Animationen */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
-#stars3 {
-    background: url('https://www.script-tutorials.com/demos/360/images/stars.png') repeat top center;
-    z-index: -3;
-    animation: animateStars 25s linear infinite;
-}
-
-@keyframes animateStars {
-    from { background-position: 0px; }
-    to { background-position: -9999px; }
-}
-
-@keyframes jiggle {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-    100% { transform: scale(1); }
-}
-
-.loader {
-    border: 16px solid #f3f3f3;
-    border-radius: 50%;
-    border-top: 16px solid #3498db;
-    width: 120px;
-    height: 120px;
-    animation: spin 2s linear infinite;
-}
-
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-.introduction h1 {
-    animation: text-flicker 5s infinite;
-    font-size: 2.5em;
-    margin: 10px 0;
-}
-
-@keyframes text-flicker {
-    0% { color: #fff; }
-    50% { color: #6a5acd; text-shadow: 0 0 15px #6a5acd, 0 0 25px #6a5acd, 0 0 35px #6a5acd, 0 0 45px #6a5acd; }
-    100% { color: #fff; }
-}
-
-@keyframes resizeAvatar {
-    0% {transform: scale(1.25);}
-    100% {transform: scale(1);}
+@keyframes slideIn {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
