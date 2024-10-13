@@ -1,0 +1,293 @@
+/* style.css */
+
+/* Allgemeine Stile */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+body.dark-mode {
+    background-color: #333;
+    color: #f5f5f5;
+}
+
+/* Header-Stile */
+header {
+    background-color: #9c27b0; /* Lila Farbschema */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: relative; /* Relativ positionieren, um das Logo zu platzieren */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Platzhalter für Logo */
+header .logo {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    width: 50px; /* Breite des Logos */
+    height: 50px; /* Höhe des Logos */
+}
+
+header .logo img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* Navigation-Stile */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav ul li {
+    margin: 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ffeb3b; /* Gelb beim Hover */
+}
+
+/* Hauptbereich-Stile */
+main {
+    padding: 20px;
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, background-color 0.5s ease, color 0.5s ease;
+}
+
+body.dark-mode main {
+    background-color: #444;
+    color: #f5f5f5;
+}
+
+main:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Abschnitt-Stile */
+section {
+    margin-bottom: 20px;
+    animation: slideIn 1s ease-out;
+}
+
+section h2 {
+    position: relative;
+    color: #9c27b0; /* Lila Farbe für Überschriften */
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+body.dark-mode section h2 {
+    color: #ffeb3b;
+    text-shadow: 2px 2px 4px rgba(255, 235, 59, 0.3);
+}
+
+section h2:hover {
+    color: #6a1b9a;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+section p, section blockquote {
+    line-height: 1.6;
+    text-align: justify;
+}
+
+blockquote {
+    margin: 20px 0;
+    padding: 10px;
+    background-color: #f5f5f5;
+    border-left: 5px solid #9c27b0;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+body.dark-mode blockquote {
+    background-color: #555;
+    color: #f5f5f5;
+    border-left-color: #ffeb3b;
+}
+
+/* Team-Sektion-Stile */
+#team {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.team-member {
+    text-align: center;
+    margin: 20px;
+    max-width: 200px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.team-member img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.team-member h3 {
+    color: #9c27b0;
+    margin-top: 10px;
+    transition: color 0.3s ease;
+}
+
+body.dark-mode .team-member h3 {
+    color: #ffeb3b;
+}
+
+.team-member p {
+    color: #666;
+    transition: color 0.3s ease;
+}
+
+body.dark-mode .team-member p {
+    color: #ccc;
+}
+
+/* Formular-Stile */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-top: 10px;
+}
+
+form input, form textarea, form button {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #9c27b0;
+    border-radius: 5px;
+    transition: background-color 0.5s ease, border 0.5s ease, color 0.5s ease;
+}
+
+body.dark-mode form input,
+body.dark-mode form textarea {
+    background-color: #555;
+    color: #f5f5f5;
+    border-color: #ffeb3b;
+}
+
+form button {
+    background-color: #9c27b0;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode form button {
+    background-color: #ffeb3b;
+    color: #333;
+}
+
+form button:hover {
+    background-color: #6a1b9a;
+}
+
+body.dark-mode form button:hover {
+    background-color: #ffd700;
+}
+
+/* Footer-Stile */
+footer {
+    background-color: #6a1b9a; /* Dunkleres Lila für den Footer */
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+body.dark-mode footer {
+    background-color: #222;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #team {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Button für Dark Mode */
+.dark-mode-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #9c27b0; /* Lila Farbe */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dark-mode-toggle:hover {
+    background-color: #6a1b9a;
+}
+
+/* Animationen */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

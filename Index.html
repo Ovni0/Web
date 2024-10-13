@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fletta Project</title>
+    <!-- Fuente de Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Archivo CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<header>
+    <div class="logo">
+        <img src="logo.png" alt="Fletta Project Logo">
+    </div>
+    <h1>Fletta Project</h1>
+    <nav>
+        <ul>
+            <li><a href="#about">Sobre nosotros</a></li>
+            <li><a href="#events">Nuestros eventos</a></li>
+            <li><a href="#team">Nuestro equipo</a></li>
+            <li><a href="#testimonials">Testimonios</a></li>
+            <li><a href="#contact">Contacto</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section id="about">
+        <h2>Sobre nosotros</h2>
+        <p>Bienvenidos al Fletta Project! Organizamos eventos emocionantes e inolvidables para todas las edades. Nuestro objetivo es reunir a las personas y ofrecer experiencias únicas.</p>
+    </section>
+
+    <section id="events">
+        <h2>Nuestros eventos</h2>
+        <p>Ofrecemos una variedad de eventos, incluyendo conciertos, talleres, festivales y mucho más. Ya seas un amante de la música, un fanático del arte o simplemente estés buscando diversión, encontrarás el evento perfecto con nosotros.</p>
+    </section>
+
+    <section id="team">
+        <h2>Nuestro equipo</h2>
+        <div class="team-member">
+            <img src="Team1.png" alt="Foto de Juan Perez">
+            <h3>Juan Perez</h3>
+            <p>Director de Eventos</p>
+        </div>
+        <div class="team-member">
+            <img src="Team2.png" alt="Foto de Maria Gomez">
+            <h3>Maria Gomez</h3>
+            <p>Coordinadora de Relaciones Públicas</p>
+        </div>
+        <div class="team-member">
+            <img src="Team3.png" alt="Foto de Carlos Diaz">
+            <h3>Carlos Diaz</h3>
+            <p>Gerente de Finanzas</p>
+        </div>
+        <div class="team-member">
+            <img src="Team4.png" alt="Foto de Laura Martinez">
+            <h3>Laura Martinez</h3>
+            <p>Responsable de Marketing</p>
+        </div>
+    </section>
+
+    <section id="testimonials">
+        <h2>Testimonios</h2>
+        <p>Lo que nuestros participantes dicen sobre nosotros:</p>
+        <blockquote>
+            <p>"¡Una experiencia inolvidable! La organización fue de primera clase."</p>
+            <cite>- Anna Müller</cite>
+        </blockquote>
+        <blockquote>
+            <p>"Ambiente genial y eventos perfectos. ¡Siempre dispuesto a volver!"</p>
+            <cite>- Peter Schmidt</cite>
+        </blockquote>
+    </section>
+
+    <section id="contact">
+        <h2>Contacto</h2>
+        <form id="contact-form" action="send_email.php" method="POST">
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">E-Mail:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Mensaje:</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2024 Fletta Project</p>
+</footer>
+
+<!-- Botón de modo oscuro -->
+<button class="dark-mode-toggle" onclick="toggleDarkMode()">Modo oscuro</button>
+
+<!-- Archivos JS -->
+<script src="script.js"></script>
+</body>
+
+</html>
